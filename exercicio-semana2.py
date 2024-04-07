@@ -13,7 +13,7 @@
   # 2.Input perguntando ao usuário "Qual a área em metros quadrados você quer pintar?"
   # 3.Função que calcula a proporção do número informado de metros quadrados com o número base de 1 lata de tinta (valor inputado / 54)
     # 3.1.Caso o valor recebido no passo 3 seja menor ou igual a 54, retornar o valor de 1 lata de tinta para o usuário.
-    # 3.2.Caso o valor recebido no passo 3 seja um número decimal maior do que 54 (float), arredondar o valor para baixo usando a função floor(var) 
+    # 3.2.Caso o valor recebido no passo 3 seja um número maior do que 54, dividir por 54 e retornar o valor para o usuário. Obs.: caso o quociente da divisão seja um número decimal, arredondar o valor para baixo usando o operador aritmético //
   # 5.Função que multiplique o valor de 1 lata de tinta (R$80,00) pelo resultado do passo 3
   # 6.Apresentar o resultado para o usuário. 
 
