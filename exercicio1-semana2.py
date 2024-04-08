@@ -25,7 +25,7 @@ def calculo_metros(entrada, metros_1lata):
     print("Você precisa de 1 lata de tinta. O preço total da sua compra será de R$80,00")
   if(entrada > 54):
     divisão = entrada//54
-    multiplicação = divisão*80
-    print("Você precisa de", divisão, "latas de tinta. O preço total da sua compra será de R$", multiplicação, ",00")
+    valor_da_compra = divisão*80
+    print("Você precisa de ", divisão, " latas de tinta. O preço total da sua compra será de R$ ", valor_da_compra, ",00", sep="")
     
 calculo_metros(entrada,metros_1lata)
