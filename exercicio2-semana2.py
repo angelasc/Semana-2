@@ -6,11 +6,9 @@
     #misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
   
 #Infos
-  # Lata de tinta = 18 litros (R$ 80,00)
-  # Galão de tinta = 3,6 litros (R$ 25,00)
-  # 1 litro de tinta = 6 metros quadrados
-  # 18 litros = 108 metros quadrados
-  # 3,6 litros = 21,6 metros quadrados
+  # 1 litro de tinta = cobre 6 metros quadrados  
+  # Lata de tinta = 18 litros (R$ 80,00) = cobre 108 metros quadrados
+  # Galão de tinta = 3,6 litros (R$ 25,00) = cobre 21,6 metros quadrados
   # 5 galões = 1 lata
   # A quantidade mínima por pessoa é 1 galão (3,6L / 21,6 metros quadrados / R$25,00)
  
@@ -28,26 +26,38 @@
   # 6.Apresentar o resultado para o usuário. 
 
 metros_1galão = 21.6
-print(type(metros_1galão))
 entrada = float(input("Qual a área em metros quadrados você quer pintar? "))
 
-def calculo_metros(entrada, metros_1galão):
-  if (entrada <= 21.6):
-    print("Você precisa de 1 galão de tinta. O preço total da sua compra será de R$25,00")
-  
-  if (entrada > 21.6):
-    opção_latas = int(entrada//108)
-    ceil(opção_latas)
-    valor_da_compra_latas = int(opção_latas*80)
-    print("Opção 1 (Somente latas): Você precisa de ", opção_latas, " latas. O preço total da sua compra será de R$", valor_da_compra_latas, ",00", sep="")
-    
-    opção_galões = int(entrada//21.6)
-    valor_da_compra_galões = int(opção_galões*80)
-    print("Opção 2 (Somente galões): Você precisa de ", opção_galões, " galões. O preço total da sua compra será de R$", valor_da_compra_galões, ",00", sep="")
+import math
 
-  if (entrada > 108):
-    opção_galões_latas = int(entrada//21.6)
-    print("Continua...")
+opção1_latas = math.ceil(entrada/108)
+valor_da_compra1 = opção1_latas*80
+print("Opção 1 (Somente latas): Você precisa de ", opção1_latas, " latas. O preço total da sua compra será de R$ ", valor_da_compra1, ",00.", sep="")
     
+opção2_galões = math.ceil(entrada/21.6)
+valor_da_compra2 = opção2_galões*25
+print("Opção 2 (Somente galões): Você precisa de ", opção2_galões, " galões. O preço total da sua compra será de R$ ", valor_da_compra2, ",00.", sep="")
+
+quantidade_latas = math.ceil((entrada*1.1)//108)
+print(quantidade_latas)
+quantidade_galões = math.ceil((entrada*1.1)//21.6)
+print(quantidade_galões)
+  
+if (quantidade_galões >= 4):
+  quantidade_latas = quantidade_latas + 1
+  quantidade_galões = 0
+  
+valor_da_compra3 = (quantidade_latas*80)+(quantidade_galões*25)
+print("Opção 3 (Galões e latas): Você precisa de ", quantidade_latas, " latas e ", quantidade_galões, " galões. O preço total da sua compra será de R$ ", valor_da_compra3, ",00.", sep="")
+
+
+
+
     
-calculo_metros(entrada,metros_1galão)
+#misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
+
+  # se a pessoa quiser pintar até 64,8 metros, compensa comprar 3 galões
+  # se a pessoa quiser pintar acima de 64,8 metros, compensa comprar 1 lata 
+  # o valor em metros que a pessoa quer pintar deve ser acrescido em 10% para dar uma folga de tinta
+  # 4 galões >> substitui por 1 lata  
+  
